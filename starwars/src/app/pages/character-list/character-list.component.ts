@@ -1,8 +1,9 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CharacterCardComponent } from '../../shared/components/character-card/character-card.component';
 import { Character } from '../../core/swapi.model';
 import { RouterModule } from '@angular/router';
+import { LoggerService } from '../../core/services/logger.service';
 
 @Component({
   selector: 'app-character-list',
@@ -15,6 +16,8 @@ import { RouterModule } from '@angular/router';
   styleUrl: './character-list.component.scss'
 })
 export class CharacterListComponent {
+
+  private logger = inject(LoggerService);
   characters: Character[] = [
     {
       name: 'Luke Skywalker',
@@ -24,5 +27,8 @@ export class CharacterListComponent {
       name: 'Darth Vader',
       uid: '2',
     }
-  ]
+  ];
+  constructor() {
+    this.logger.log('CharacterListComponent initialized');
+  }
 }

@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { LoggerService } from '../../core/services/logger.service';
 
 @Component({
   selector: 'app-character-detail',
@@ -12,7 +13,8 @@ import { ActivatedRoute } from '@angular/router';
 export class CharacterDetailComponent {
   characterId: string | null = null;
 
-  constructor(private route: ActivatedRoute) {
+  constructor(private route: ActivatedRoute, private logger: LoggerService) {
+    this.logger.log('CharacterDetailComponent initialized');
     this.characterId = this.route.snapshot.paramMap.get('id');
   }
 }
