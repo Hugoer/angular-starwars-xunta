@@ -2,12 +2,14 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { CharacterCardComponent } from '../../shared/components/character-card/character-card.component';
 import { Character } from '../../core/swapi.model';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-character-list',
   imports: [
     CommonModule,
     CharacterCardComponent,
+    RouterModule,
   ],
   templateUrl: './character-list.component.html',
   styleUrl: './character-list.component.scss'
