@@ -1,2 +1,6 @@
-<h1>Character Detail</h1>
-<p>Character ID: {{ characterId }}</p>
+<div *ngIf="character$ | async as data">
+  <h1>{{ data.name }}</h1>
+  <p>Gender: {{ data.gender }}</p>
+  <p>Birth year: {{ data.birth_year }}</p>
+  <p>Height: {{ data.height }} cm</p>
+</div>

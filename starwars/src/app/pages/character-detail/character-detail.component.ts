@@ -1,7 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { LoggerService } from '../../core/services/logger.service';
+import { StarwarsService } from '../../core/services/starwars.service';
 
 @Component({
   selector: 'app-character-detail',
@@ -11,10 +12,12 @@ import { LoggerService } from '../../core/services/logger.service';
   styleUrls: ['./character-detail.component.scss']
 })
 export class CharacterDetailComponent {
-  characterId: string | null = null;
 
-  constructor(private route: ActivatedRoute, private logger: LoggerService) {
+  constructor(private logger: LoggerService) {
     this.logger.log('CharacterDetailComponent initialized');
-    this.characterId = this.route.snapshot.paramMap.get('id');
   }
+  private route = inject(ActivatedRoute);
+  private starWarsService = inject(StarwarsService);
+
+  character$ = this.starWarsService.getCharacterById(Number(this.route.snapshot.paramMap.get('id')));
 }
