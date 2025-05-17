@@ -1,0 +1,19 @@
+:host {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 1fr;
+  box-sizing: border-box;
+  padding: 2rem 10px;
+
+  @media (min-width: 576px) and (max-width: 1440px) {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 2rem 50px;
+  }
+
+  @media (min-width: 1441px) {
+    grid-template-columns: repeat(4, 1fr);
+    padding: 2rem 0;
+    max-width: 1474px;
+    margin: 0 auto;
+  }
+}

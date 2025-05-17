@@ -1,1 +1,3 @@
-<p>character-list works!</p>
+<ng-container *ngFor="let character of characters as data">
+  <app-character-card [name]="character.name"></app-character-card>
+</ng-container>
