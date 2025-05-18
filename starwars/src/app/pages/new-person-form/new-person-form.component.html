@@ -1,0 +1,150 @@
+<!-- Mensaje de carga mientras se obtienen las opciones -->
+<div *ngIf="isLoading()" class="loading">
+  Cargando datos, por favor espere...
+</div>
+
+<!-- Formulario de creación de personaje -->
+<form *ngIf="!isLoading()" [formGroup]="personForm" (ngSubmit)="onSubmit()">
+  <!-- Campo: Nombre -->
+  <div class="form-field">
+    <label for="name">Nombre:</label>
+    <input id="name" type="text" formControlName="name" class="search-input" />
+    <div class="error-text" *ngIf="personForm.get('name')?.touched && personForm.get('name')?.invalid">
+      * Nombre es obligatorio.
+    </div>
+  </div>
+
+  <!-- Campo: Altura -->
+  <div class="form-field">
+    <label for="height">Altura:</label>
+    <input id="height" type="text" formControlName="height" class="search-input" />
+    <div class="error-text" *ngIf="personForm.get('height')?.touched && personForm.get('height')?.invalid">
+      * Altura es obligatoria.
+    </div>
+  </div>
+
+  <!-- Campo: Peso -->
+  <div class="form-field">
+    <label for="mass">Peso:</label>
+    <input id="mass" type="text" formControlName="mass" class="search-input" />
+    <div class="error-text" *ngIf="personForm.get('mass')?.touched && personForm.get('mass')?.invalid">
+      * Peso es obligatorio.
+    </div>
+  </div>
+
+  <!-- Campo: Color de Cabello -->
+  <div class="form-field">
+    <label for="hair_color">Color de cabello:</label>
+    <input id="hair_color" type="text" formControlName="hair_color" class="search-input" />
+    <div class="error-text" *ngIf="personForm.get('hair_color')?.touched && personForm.get('hair_color')?.invalid">
+      * Color de cabello es obligatorio.
+    </div>
+  </div>
+
+  <!-- Campo: Color de Piel -->
+  <div class="form-field">
+    <label for="skin_color">Color de piel:</label>
+    <input id="skin_color" type="text" formControlName="skin_color" class="search-input" />
+    <div class="error-text" *ngIf="personForm.get('skin_color')?.touched && personForm.get('skin_color')?.invalid">
+      * Color de piel es obligatorio.
+    </div>
+  </div>
+
+  <!-- Campo: Color de Ojos -->
+  <div class="form-field">
+    <label for="eye_color">Color de ojos:</label>
+    <input id="eye_color" type="text" formControlName="eye_color" class="search-input" />
+    <div class="error-text" *ngIf="personForm.get('eye_color')?.touched && personForm.get('eye_color')?.invalid">
+      * Color de ojos es obligatorio.
+    </div>
+  </div>
+
+  <!-- Campo: Año de Nacimiento -->
+  <div class="form-field">
+    <label for="birth_year">Año de nacimiento:</label>
+    <input id="birth_year" type="text" formControlName="birth_year" class="search-input" />
+    <div class="error-text" *ngIf="personForm.get('birth_year')?.touched && personForm.get('birth_year')?.invalid">
+      * Año de nacimiento es obligatorio.
+    </div>
+  </div>
+
+  <!-- Campo: Género -->
+  <div class="form-field">
+    <label for="gender">Género:</label>
+    <input id="gender" type="text" formControlName="gender" class="search-input" />
+    <div class="error-text" *ngIf="personForm.get('gender')?.touched && personForm.get('gender')?.invalid">
+      * Género es obligatorio.
+    </div>
+  </div>
+
+  <!-- Campo: Mundo Natal -->
+  <div class="form-field">
+    <label for="homeworld">Mundo natal:</label>
+    <input id="homeworld" type="text" formControlName="homeworld" class="search-input" />
+    <div class="error-text" *ngIf="personForm.get('homeworld')?.touched && personForm.get('homeworld')?.invalid">
+      * Mundo natal es obligatorio.
+    </div>
+  </div>
+
+  <!-- Campo: Películas (multiselect) -->
+  <div class="form-field">
+    <label for="films">Películas:</label>
+    <select id="films" multiple formControlName="films" class="search-input">
+      <option *ngFor="let film of filmsOptions()" [value]="film.value">
+        {{ film.label }}
+      </option>
+    </select>
+    <div class="error-text" *ngIf="personForm.get('films')?.touched && personForm.get('films')?.invalid">
+      * Seleccione al menos una película.
+    </div>
+  </div>
+
+  <!-- Campo: Especies (multiselect) -->
+  <div class="form-field">
+    <label for="species">Especies:</label>
+    <select id="species" multiple formControlName="species" class="search-input">
+      <option *ngFor="let sp of speciesOptions()" [value]="sp.value">
+        {{ sp.label }}
+      </option>
+    </select>
+    <div class="error-text" *ngIf="personForm.get('species')?.touched && personForm.get('species')?.invalid">
+      * Seleccione al menos una especie.
+    </div>
+  </div>
+
+  <!-- Campo: Vehículos (multiselect) -->
+  <div class="form-field">
+    <label for="vehicles">Vehículos:</label>
+    <select id="vehicles" multiple formControlName="vehicles" class="search-input">
+      <option *ngFor="let veh of vehiclesOptions()" [value]="veh.value">
+        {{ veh.label }}
+      </option>
+    </select>
+    <div class="error-text" *ngIf="personForm.get('vehicles')?.touched && personForm.get('vehicles')?.invalid">
+      * Seleccione al menos un vehículo.
+    </div>
+  </div>
+
+  <!-- Campo: Naves Estelares (multiselect) -->
+  <div class="form-field">
+    <label for="starships">Naves estelares:</label>
+    <select id="starships" multiple formControlName="starships" class="search-input">
+      <option *ngFor="let sh of starshipsOptions()" [value]="sh.value">
+        {{ sh.label }}
+      </option>
+    </select>
+    <div class="error-text" *ngIf="personForm.get('starships')?.touched && personForm.get('starships')?.invalid">
+      * Seleccione al menos una nave.
+    </div>
+  </div>
+
+  <!-- Botón de envío -->
+  <button type="submit" [disabled]="!canSubmit()">
+    Crear Personaje
+  </button>
+
+  <!-- Mensaje de error global (ej. error al enviar) -->
+  <div *ngIf="error()" class="error-text">
+    {{ error() }}
+  </div>
+</form>
