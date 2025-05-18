@@ -8,7 +8,7 @@ import { Character, Film, Person } from '../models/swapi.model';
 })
 export class StarwarsService {
 
-private baseUrl = 'https://www.swapi.tech/api/';
+  private baseUrl = 'https://www.swapi.tech/api/';
 
   constructor(private http: HttpClient) {
   }
@@ -34,6 +34,19 @@ private baseUrl = 'https://www.swapi.tech/api/';
   getCharacterById(id: number): Observable<Person> {
     return this.http.get<any>(`${this.baseUrl}people/${id}`).pipe(
       map((response) => response.result.properties)
+    );
+  }
+
+  // https://www.swapi.tech/api/people/?name=r2
+  getCharactersByName(name: string): Observable<Character[]> {
+    return this.http.get<any>(`${this.baseUrl}people?name=${name}`).pipe(
+      map(res => (res.result || [])
+      .map((r: any) => {
+        return {
+          uid: r.uid,
+          name: r.properties.name,
+        }
+      }))
     );
   }
 
