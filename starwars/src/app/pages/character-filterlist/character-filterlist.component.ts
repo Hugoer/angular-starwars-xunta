@@ -6,6 +6,7 @@ import { StarwarsService } from '../../core/services/starwars.service';
 import { LoggerService } from '../../core/services/logger.service';
 import { Character } from '../../core/models/swapi.model';
 import { RouterModule, ActivatedRoute, Router } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-character-filterlist',
@@ -15,6 +16,7 @@ import { RouterModule, ActivatedRoute, Router } from '@angular/router';
     CharacterCardComponent,
     FormsModule,
     RouterModule,
+    TranslateModule,
   ],
   templateUrl: './character-filterlist.component.html',
   styleUrls: ['./character-filterlist.component.scss']

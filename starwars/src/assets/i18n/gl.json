@@ -1,0 +1,49 @@
+{
+  "menu": {
+    "menu": "Menú de navegación de personaxes",
+    "list": "Lista de personaxes",
+    "search": "Buscar personaxes",
+    "add": "Engadir personaxe"
+  },
+  "filter": {
+    "search": "Buscar personaxe por nome",
+    "loading": "Cargando personaxes...",
+    "result": "resultado",
+    "found": "atopado",
+    "reset": "Limpar busca",
+    "noresults": "Non se atoparon personaxes."
+  },
+  "add": {
+    "create": "Engadir personaxe",
+    "loading": "Cargando datos, agarde por favor...",
+    "error": "Erro ao cargar os datos",
+    "success": "Personaxe engadido con éxito",
+    "errorName": "O nome é obrigatorio",
+    "errorHeight": "A altura é obrigatoria",
+    "errorMass": "O peso é obrigatorio",
+    "errorHairColor": "A cor do cabelo é obrigatoria",
+    "errorSkinColor": "A cor da pel é obrigatoria",
+    "errorEyeColor": "A cor dos ollos é obrigatoria",
+    "errorBirthYear": "O ano de nacemento é obrigatorio",
+    "errorGender": "O xénero é obrigatorio",
+    "errorHomeworld": "O planeta de orixe é obrigatorio",
+    "errorSpecies": "A especie é obrigatoria",
+    "errorStarships": "As naves estelares son obrigatorias",
+    "errorVehicles": "Os vehículos son obrigatorios",
+    "errorFilms": "As películas son obrigatorias",
+    "title": "Engadir personaxe",
+    "name": "Nome",
+    "height": "Altura",
+    "mass": "Peso",
+    "hair_color": "Cor do cabelo",
+    "film": "Películas",
+    "species": "Especie",
+    "homeworld": "Planeta de orixe",
+    "vehicles": "Vehículos",
+    "starships": "Naves estelares",
+    "eye_color": "Cor dos ollos",
+    "birth_year": "Ano de nacemento",
+    "gender": "Xénero",
+    "skin_color": "Cor da pel"
+  }
+}

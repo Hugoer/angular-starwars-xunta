@@ -3,6 +3,7 @@ import { FormGroup, FormControl, Validators, ReactiveFormsModule } from '@angula
 import { HttpClient } from '@angular/common/http';
 import { forkJoin } from 'rxjs';
 import { CommonModule } from '@angular/common';
+import { TranslateModule } from '@ngx-translate/core';
 
 interface OptionItem {
   label: string;
@@ -12,7 +13,11 @@ interface OptionItem {
 @Component({
   selector: 'app-new-person-form',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [
+    CommonModule,
+    ReactiveFormsModule,
+    TranslateModule,
+  ],
   templateUrl: './new-person-form.component.html',
   styleUrls: ['./new-person-form.component.scss']
 })

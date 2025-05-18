@@ -2,26 +2,26 @@
   <input
     type="text"
     class="input"
-    placeholder="Buscar personaje por nombre"
+    placeholder="{{ 'filter.search' | translate }}"
     [value]="searchTerm()"
     (input)="onSearch($event)"
   />
 
   <div class="info-bar">
     @if (isLoading()) {
-      <span>Cargando personajes...</span>
+      <span>{{ 'filter.loading' | translate }}</span>
     } @else if (error()) {
       <span>{{ error() }}</span>
     } @else if (characters().length > 0) {
       <span>
-        {{ characters().length }} resultado{{ characters().length === 1 ? '' : 's' }} encontrado{{ characters().length === 1 ? '' : 's' }}
+        {{ characters().length }} {{ 'filter.result' | translate }}{{ characters().length === 1 ? '' : 's' }} {{ 'filter.found' | translate }}{{ characters().length === 1 ? '' : 's' }}
       </span>
       @if (searchTerm().trim()) {
-        <button class="reset-btn" (click)="resetSearch()">Limpiar búsqueda</button>
+        <button class="reset-btn" (click)="resetSearch()">{{ 'filter.reset' | translate }}</button>
       }
     } @else if (searchTerm().trim()) {
-      <span>No se encontraron personajes.</span>
-      <button class="reset-btn" (click)="resetSearch()">Limpiar búsqueda</button>
+      <span>{{ 'filter.noresults' | translate }}</span>
+      <button class="reset-btn" (click)="resetSearch()">{{ 'filter.reset' | translate }}</button>
     }
   </div>
 

@@ -1,0 +1,49 @@
+{
+  "menu" : {
+    "menu": "Menú de navegación de personajes",
+    "list": "Lista de personajes",
+    "search": "Buscar personajes",
+    "add":"Añadir personaje"
+  },
+  "filter":{
+    "search" : "Buscar personaje por nombre",
+    "loading": "Cargando personajes...",
+    "result": "resultado",
+    "found": "encontrado",
+    "reset": "Limpiar búsqueda",
+    "noresults": "No se encontraron personajes."
+  },
+  "add" : {
+    "create": "Añadir personaje",
+    "loading": "Cargando datos, por favor espere...",
+    "error": "Error al cargar los datos",
+    "success": "Personaje añadido con éxito",
+    "errorName": "El nombre es obligatorio",
+    "errorHeight": "La altura es obligatoria",
+    "errorMass": "El peso es obligatorio",
+    "errorHairColor": "El color de pelo es obligatorio",
+    "errorSkinColor": "El color de piel es obligatorio",
+    "errorEyeColor": "El color de ojos es obligatorio",
+    "errorBirthYear": "El año de nacimiento es obligatorio",
+    "errorGender": "El género es obligatorio",
+    "errorHomeworld": "El planeta de origen es obligatorio",
+    "errorSpecies": "La especie es obligatoria",
+    "errorStarships": "Las naves estelares son obligatorias",
+    "errorVehicles": "Los vehículos son obligatorios",
+    "errorFilms": "Las películas son obligatorias",
+    "title": "Añadir personaje",
+    "name": "Nombre",
+    "height": "Altura",
+    "mass": "Peso",
+    "hair_color": "Color de pelo",
+    "film": "Películas",
+    "species": "Especie",
+    "homeworld": "Planeta de origen",
+    "vehicles": "Vehículos",
+    "starships": "Naves estelares",
+    "eye_color": "Color de ojos",
+    "birth_year": "Año de nacimiento",
+    "gender": "Género",
+    "skin_color": "Color de piel"
+  }
+}
