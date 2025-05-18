@@ -3,10 +3,12 @@ import { CharacterListComponent } from './pages/character-list/character-list.co
 import { CharacterDetailComponent } from './pages/character-detail/character-detail.component';
 import { CharacterFilterListComponent } from './pages/character-filterlist/character-filterlist.component';
 import { NewPersonFormComponent } from './pages/new-person-form/new-person-form.component';
+import { CharacterMenuComponent } from './pages/character-menu/character-menu.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'character', pathMatch: 'full' },
-  { path: 'character', component: CharacterListComponent },
+  { path: 'character', component: CharacterMenuComponent },
+  { path: 'character/list', component: CharacterListComponent },
   { path: 'character/filter', component: CharacterFilterListComponent },
   { path: 'character/add', component: NewPersonFormComponent },
   { path: 'character/:id', component: CharacterDetailComponent },
